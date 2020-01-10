@@ -19,27 +19,28 @@ module.exports = function(app) {
     });
 
     // Form PUT
-    app.put("/api/posts", function(req, res) {
-        db.Post.update(req.body,
+    app.put("/api/form", function(req, res) {
+        db.Form.update(req.body,
         {
             where: {
               id: req.body.id
             }
         })
-        .then(function(dbPost) {
-            res.json(dbPost);
+        .then(function(dbForm) {
+            res.json(dbForm);
         });
     });
 
     // Form DELETE
-    app.delete("/api/posts/:id", function(req, res) {
-        db.Post.destroy({
+    app.delete("/api/form/:id", function(req, res) {
+        console.log("delete test")
+        db.Form.destroy({
             where: {
                 id: req.params.id
             }
         })
-        .then(function(dbPost) {
-            res.json(dbPost);
+        .then(function(dbForm) {
+            res.json(dbForm);
         });
     });
 }
