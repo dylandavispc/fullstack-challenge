@@ -79,6 +79,7 @@ export default class Form extends React.Component {
     render() {
         return (
             <div>
+                <nav className="navbar">
                 <form>
                     <div className="form-row">
                         <div className="col">
@@ -113,7 +114,7 @@ export default class Form extends React.Component {
                         </div>
                         <button 
                             type="submit" 
-                            className="btn btn-primary mb-2" 
+                            className="btn btn-success mb-2" 
                             onClick={this.submit}
                             disabled={!(this.state.fName && this.state.lName && this.state.part)}
                         >
@@ -121,6 +122,8 @@ export default class Form extends React.Component {
                         </button>
                     </div>
                 </form>
+                </nav>
+                
             </div>
         );
     };

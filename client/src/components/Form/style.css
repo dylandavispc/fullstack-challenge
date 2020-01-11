@@ -1,0 +1,12 @@
+.navbar {
+    padding-left: 0px;
+    padding-right: 0px;
+    display: block;
+    height: 100px;
+}
+
+
+form {
+    position: relative;
+    top: 20px;
+}

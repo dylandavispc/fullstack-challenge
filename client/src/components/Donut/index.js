@@ -56,7 +56,6 @@ export default class Donut extends Component {
     }
 
     fillChart = () => {
-        const proper = this.props.parts;
         let names = [];
         let parts = [];
         this.props.parts.map((x) => {

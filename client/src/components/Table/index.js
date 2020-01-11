@@ -44,7 +44,7 @@ export default class Table extends React.Component {
                     <td>{lastName}</td>
                     <td>{part}%</td>
                     <td>
-                        <button onClick={() => {this._handleDelete(id) }}>X</button>
+                        <button className="delete" onClick={() => {this._handleDelete(id) }}>X</button>
                     </td>
                 </tr>
             );
@@ -68,12 +68,13 @@ export default class Table extends React.Component {
     render() {
         return (
             <div>
-                <table>
-                    <thead>
+                <table className="table">
+                    <thead className="thead-dark">
                         <tr>
-                            <th>First</th>
-                            <th>Last</th>
-                            <th>Participation</th>
+                            <th scope="col-md-4">First</th>
+                            <th scope="col-md-4">Last</th>
+                            <th scope="col-md-3">Participation</th>
+                            <th scope="col-md-1"></th>
                         </tr>
                     </thead>
                     <tbody>

@@ -51,35 +51,44 @@ class App extends Component {
   // App Render
   render() {
     return (
-      <div className="container">
-        <section className="row">
-          <div className="col-md-12">
+      <div>
+        <div className="navRow">
+          
+        </div>
+        <div className="container">
+          <section className="row">
+            <div className="col-md-12">
             <Form 
-              parts = {this.state.parts}
-              reload = {this.loader}
-            />
-          </div>
-        </section>
-        <section className="row">
-          <div className="col-md-12">
-            <h1>Data!</h1>
-            <h3>Lorem Ipsum...</h3>
-          </div>
-        </section>
-        <section className="row">
-          <div className="col-md-6">
-            <Table 
-              parts = {this.state.parts}
-              reload = {this.loader}
-            />
-          </div>
-          <div className="col-md-6">
-            <Donut 
-              parts = {this.state.parts}
-            />
-          </div>
-        </section>
+            parts = {this.state.parts}
+            reload = {this.loader}
+          />
+            </div>
+          </section>
+          <section className="row">
+            <div className="col-md-12 text-center headDiv">
+              <h1>Data!</h1>
+              <h3>Lorem Ipsum...</h3>
+            </div>
+          </section>
+          <section className="row">
+            <div className="col-md-6">
+              <Table 
+                parts = {this.state.parts}
+                reload = {this.loader}
+              />
+            </div>
+            <div className="col-md-6">
+              <Donut 
+                parts = {this.state.parts}
+              />
+            </div>
+          </section>
+        </div>
+        <footer className="footer">
+          <p>dylandavispc@gmail.com</p>
+        </footer>
       </div>
+      
     );
   };
 };

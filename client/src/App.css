@@ -7,6 +7,34 @@
   height: 80px;
 }
 
+.container {
+  max-width: 1480px;
+}
+
+.headDiv {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.navRow {
+  position: absolute;
+  background-color: cornflowerblue;
+  padding: 0px 20px 0px 20px;
+  height: 96px;
+  width: 100%;
+}
+
+.footer {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  font-size: 20px;
+  bottom: 0px;
+  text-align: center;
+  background-color: #343a40;
+  color: white;
+}
+
 .App-header {
   background-color: #222;
   height: 150px;
