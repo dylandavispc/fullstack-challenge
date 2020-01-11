@@ -18,11 +18,28 @@ export default class Table extends React.Component {
     }
 
     fillForm = () => {
-        // console.log("form", this.props.parts);
+        let i = 0;
+        const colors = [
+            '#66ffcc',
+            '#66ccff',
+            '#cc99ff',
+            '#ff99cc',
+            '#ffcc99',
+            '#99ff66',
+            '#00ff00',
+            '#00ffff',
+            '#ff66ff',
+            '#ff5050',
+        ];
+        const colorPicker = () => {
+            const trStyle = {backgroundColor: colors[i]}
+            i++;
+            return trStyle;
+        }
         return this.props.parts.map((x) => {
             const { id, firstName, lastName, part } = x;
             return (
-                <tr key={id}>
+                <tr style={colorPicker()} key={id}>
                     <td>{firstName}</td>
                     <td>{lastName}</td>
                     <td>{part}%</td>
