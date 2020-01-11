@@ -39,6 +39,7 @@ export default class Table extends React.Component {
         console.log(URL);
         axios.delete(URL)
             .then(res => {
+                this.props.reload();
                 console.log(res.data);
             })
             .catch((err) => {

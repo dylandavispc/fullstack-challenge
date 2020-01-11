@@ -10,9 +10,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      parts : []
+      parts : [],
+      loaded: false
     };
     this.getParts = this.getParts.bind(this);
+    this.loader = this.loader.bind(this);
   };
 
   // Functions
@@ -21,10 +23,15 @@ class App extends Component {
   };
 
   componentDidUpdate = () => {
-    this.getParts();
-}
+    if (!this.state.loaded) {
+      this.getParts();
+    };
+  };
 
   getParts() {
+    this.setState({
+      loaded: true
+    })
     axios.get("/api/form").then(response => {
       if (response.data) {
         this.setState({
@@ -32,6 +39,13 @@ class App extends Component {
         });
       }
     })
+  };
+
+  loader() {
+    console.log("loading")
+    this.setState({
+      loaded: false
+    });
   };
 
   // App Render
@@ -42,6 +56,7 @@ class App extends Component {
           <div className="col-md-12">
             <Form 
               parts = {this.state.parts}
+              reload = {this.loader}
             />
           </div>
         </section>
@@ -52,12 +67,13 @@ class App extends Component {
           </div>
         </section>
         <section className="row">
-          <div className="col-md-8">
+          <div className="col-md-6">
             <Table 
               parts = {this.state.parts}
+              reload = {this.loader}
             />
           </div>
-          <div className="col-md-4">
+          <div className="col-md-6">
             <Donut 
               parts = {this.state.parts}
             />

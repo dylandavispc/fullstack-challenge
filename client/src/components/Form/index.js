@@ -37,7 +37,11 @@ export default class Form extends React.Component {
         let sum = this.add();
         if (sum + newPart <= 100) {
             this.post();
-            alert("Participant Added!!!");
+            setTimeout(() => {
+                this.props.reload();
+            }, 200);
+            
+            // alert("Participant Added!!!");
         }
         else {
             alert("Oh no! There isn't enought room for you in the participation!! :(");
