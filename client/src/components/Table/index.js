@@ -9,7 +9,7 @@ export default class Table extends React.Component {
             
         };
         this.fillForm = this.fillForm.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
+        this._handleDelete = this._handleDelete.bind(this);
     };
 
     // Functions
@@ -25,17 +25,17 @@ export default class Table extends React.Component {
                 <tr key={id}>
                     <td>{firstName}</td>
                     <td>{lastName}</td>
-                    <td>{part}</td>
+                    <td>{part}%</td>
                     <td>
-                        {/* <button onClick={this.handleDelete(id)}>X</button> */}
+                        <button onClick={() => {this._handleDelete(id) }}>X</button>
                     </td>
                 </tr>
             );
         });
     };
 
-    handleDelete = (id) => {
-        const URL = `/api/form/${id.id}`;
+    _handleDelete = (id) => {
+        const URL = `/api/form/${id}`;
         console.log(URL);
         axios.delete(URL)
             .then(res => {

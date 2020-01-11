@@ -33,7 +33,7 @@ module.exports = function(app) {
 
     // Form DELETE
     app.delete("/api/form/:id", function(req, res) {
-        console.log("delete test")
+        console.log(req.params.id)
         db.Form.destroy({
             where: {
                 id: req.params.id
