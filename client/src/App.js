@@ -70,19 +70,21 @@ class App extends Component {
               <h3>Lorem Ipsum...</h3>
             </div>
           </section>
-          <section className="row">
-            <div className="col-md-6">
+          <section className="row meat">
+          <div className="col-sm-6 order-md-2 donut">
+              <Donut 
+                parts = {this.state.parts}
+              />
+            </div>
+            <div className="col-sm-6 order-md-1">
               <Table 
                 parts = {this.state.parts}
                 reload = {this.loader}
               />
             </div>
-            <div className="col-md-6">
-              <Donut 
-                parts = {this.state.parts}
-              />
-            </div>
+
           </section>
+          
         </div>
         <footer className="footer">
           <p>dylandavispc@gmail.com</p>

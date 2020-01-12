@@ -2,13 +2,23 @@
   text-align: center;
 }
 
+.meat {
+  margin-bottom: 146px;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
 
+.donut {
+  margin-bottom: 40px;
+}
+
 .container {
   max-width: 1480px;
+  min-height:100%;
+  position:relative;
 }
 
 .headDiv {
@@ -49,4 +59,10 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    position: initial;
+  }
 }
