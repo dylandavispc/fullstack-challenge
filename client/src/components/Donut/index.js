@@ -65,7 +65,6 @@ export default class Donut extends Component {
             parts.push(part);
         });
         const chart = this.op(names, parts);
-        console.log(chart)
         return chart;
     };
 

@@ -33,9 +33,11 @@ export default class Form extends React.Component {
     submit = event => {
         event.preventDefault();
         //!!! Checking to see if participation exceeds the maximum participation percentage
+        //!!! or participant count exceeds 10
         let newPart = parseInt(this.state.part);
         let sum = this.add();
-        if (sum + newPart <= 100) {
+        let partLength = this.props.parts.length;
+        if (sum + newPart <= 100 && partLength < 11) {
             this.post();
             setTimeout(() => {
                 this.props.reload();
@@ -44,7 +46,7 @@ export default class Form extends React.Component {
             // alert("Participant Added!!!");
         }
         else {
-            alert("Oh no! There isn't enought room for you in the participation!! :(");
+            alert("Participation percentage cannot exceed 100% or 10 participants. Please remove participant or input smaller percentage before sending.");
         };
     };
 
