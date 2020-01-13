@@ -5,8 +5,12 @@ module.exports = function(app) {
     // Form POST
     app.post("/api/form", function(req, res) {
         console.log(req.body);
-        db.Form.create(req.body).then(function(dbForm) {
+        db.Form.create(req.body)
+        .then(function(dbForm) {
             res.json(dbForm);
+        })
+        .catch(function(err) {
+            res.status(400).json({ message: "issues trying to connect to database", err });
         });
     });
 
@@ -15,6 +19,9 @@ module.exports = function(app) {
         db.Form.findAll({})
         .then(function(dbForm) {
             res.json(dbForm);
+        })
+        .catch(function(err) {
+            res.status(400).json({ message: "issues trying to connect to database", err });
         });
     });
 
@@ -28,6 +35,9 @@ module.exports = function(app) {
         })
         .then(function(dbForm) {
             res.json(dbForm);
+        })
+        .catch(function(err) {
+            res.status(400).json({ message: "issues trying to connect to database", err });
         });
     });
 
@@ -41,6 +51,9 @@ module.exports = function(app) {
         })
         .then(function(dbForm) {
             res.json(dbForm);
+        })
+        .catch(function(err) {
+            res.status(400).json({ message: "issues trying to connect to database", err });
         });
     });
 }
