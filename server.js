@@ -28,3 +28,5 @@ db.sequelize.sync({ force: false }).then(function() {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
   });
 });
+
+module.exports = app;
