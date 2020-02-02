@@ -4,6 +4,3 @@
 ## Technologies Used
 - CanvasJS
 - Bootstrap
-
-## Steps Taken
-1. 
